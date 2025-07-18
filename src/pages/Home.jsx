@@ -7,6 +7,7 @@ const Home = () => {
         <>
             <Hero></Hero>
             <FeaturedDestination></FeaturedDestination>
+            <ExclusiveOffer></ExclusiveOffer>
         </>
     );
 };
