@@ -44,12 +44,11 @@ const Navbar = () => {
 
     return (
             <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
-
                 {/* Logo */}
-                <Link to='/'>
-                    <img src={assets.logo} alt="logo" className={`h-9 ${isScrolled && "invert opacity-80"}`} />
+                <Link to='/' className="flex flex-row gap-2">
+                    <img src="https://i.postimg.cc/mDZvzcKn/add5bd76e80a208f85d556937ebe8abe.jpg" alt="logo" className={`h-9 ${isScrolled && "invert opacity-80"} rounded-full`} />
+                        <h2 className={`font-Outfit mt-1 hidden md:block lg:block text-xl ${isScrolled ? 'text-black' : 'text-white'} transition-all `}>TourNest BD</h2>
                 </Link>
-
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-4 lg:gap-8">
                     {navLinks.map((link, i) => (
