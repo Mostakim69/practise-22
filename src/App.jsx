@@ -6,12 +6,14 @@ import Footer from './components/Footer';
 import AllPlaces from './pages/AllPlaces';
 import PlaceDetails from './pages/PlaceDetails';
 import MyBookings from './pages/MyBookings';
+import PlaceReg from './components/PlaceReg';
 
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
   return (
     <div>
       {!isOwnerPath && <Navbar></Navbar>}
+      {false && <PlaceReg></PlaceReg>}
       <div className='min-h-[70vh]'>
         <Routes>
           <Route path='/' element={<Home/>}/>
