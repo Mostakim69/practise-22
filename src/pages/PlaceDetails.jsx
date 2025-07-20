@@ -59,7 +59,7 @@ const PlaceDetails = () => {
                     </div>
                 </div>
                 {/* Price */}
-                <p className='text-2xl font-medium'>${room.pricePerNight}/night</p>
+                <p className='text-2xl font-medium'>${room.pricePerDay}/day</p>
             </div>
             {/* CheckIn checkOut form */}
             <form className='flex flex-col md:flex-row items-start md:items-center justify-between bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] p-6 rounded-xl mx-auto mt-16 max-w-6xl'>

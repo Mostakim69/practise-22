@@ -78,7 +78,7 @@ const AllPlaces = () => {
                                     </div>
                                 ))}
                             </div>
-                            <p className='tex-xl font-medium text-gray-700'>${room.pricePerNight} /night</p>
+                            <p className='tex-xl font-medium text-gray-700'>${room.pricePerDay} /day</p>
                         </div>
                     </div>
                 ))}
