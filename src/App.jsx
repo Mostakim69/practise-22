@@ -8,6 +8,9 @@ import PlaceDetails from './pages/PlaceDetails';
 import MyBookings from './pages/MyBookings';
 import PlaceReg from './components/PlaceReg';
 import Layout from './pages/admin/Layout';
+import Dashbord from './pages/admin/Dashbord';
+import AddPlace from './pages/admin/AddPlace';
+import ListPlace from './pages/admin/ListPlace';
 
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
@@ -22,7 +25,9 @@ const App = () => {
           <Route path='/rooms/:id' element={<PlaceDetails/>}/>
           <Route path='/my-bookings' element={<MyBookings/>}/>
           <Route path='/owner' element={<Layout/>}>
-
+                <Route index element={<Dashbord></Dashbord>}/>
+                <Route path="add-room" element={<AddPlace/>}/>
+                <Route path="list-room" element={<ListPlace/>}/>
           </Route>
         </Routes>
       </div>
