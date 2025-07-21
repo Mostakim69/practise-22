@@ -12,16 +12,18 @@ import Dashbord from './pages/admin/Dashbord';
 import AddPlace from './pages/admin/AddPlace';
 import ListPlace from './pages/admin/ListPlace';
 import { Toaster } from 'react-hot-toast';
+import { useAppContext } from './context/AppContext';
 
 const App = () => {
 
   const isOwnerPath = useLocation().pathname.includes("owner");
+  const {showPlaceReg} = useAppContext();
 
   return (
     <div>
       <Toaster />
       {!isOwnerPath && <Navbar></Navbar>}
-      {false && <PlaceReg></PlaceReg>}
+      {showPlaceReg && <PlaceReg></PlaceReg>}
       <div className='min-h-[70vh]'>
         <Routes>
           <Route path='/' element={<Home/>}/>
