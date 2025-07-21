@@ -11,11 +11,15 @@ import Layout from './pages/admin/Layout';
 import Dashbord from './pages/admin/Dashbord';
 import AddPlace from './pages/admin/AddPlace';
 import ListPlace from './pages/admin/ListPlace';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
+
   const isOwnerPath = useLocation().pathname.includes("owner");
+
   return (
     <div>
+      <Toaster />
       {!isOwnerPath && <Navbar></Navbar>}
       {false && <PlaceReg></PlaceReg>}
       <div className='min-h-[70vh]'>
