@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
@@ -13,16 +13,19 @@ import { Toaster } from 'react-hot-toast';
 import { useAppContext } from './context/AppContext';
 import AddTour from './pages/admin/AddTour';
 import ListTour from './pages/admin/ListTour';
+import Login from './components/Login';
 
 const App = () => {
-
+  const [showLogin, setShowLogin] = useState(false)
   const isOwnerPath = useLocation().pathname.includes("owner");
   const {showPlaceReg} = useAppContext();
 
   return (
-    <div>
+    <>
+    {showLogin && <Login setShowLogin={setShowLogin}></Login> }
+      
       <Toaster />
-      {!isOwnerPath && <Navbar></Navbar>}
+      {!isOwnerPath && <Navbar setShowLogin={setShowLogin}></Navbar>}
       {showPlaceReg && <PlaceReg></PlaceReg>}
       <div className='min-h-[70vh]'>
         <Routes>
@@ -34,11 +37,14 @@ const App = () => {
                 <Route index element={<Dashbord></Dashbord>}/>
                 <Route path="add-tour" element={<AddTour/>}/>
                 <Route path="list-tour" element={<ListTour/>}/>
+                <Route path="list-tour" element={<ListTour/>}/>
+                <Route path="list-tour" element={<ListTour/>}/>
+                <Route path="list-tour" element={<ListTour/>}/>
           </Route>
         </Routes>
       </div>
       <Footer></Footer>
-    </div>
+    </>
   );
 };
 
