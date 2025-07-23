@@ -36,11 +36,11 @@ export const AppProvider = ({ children }) => {
         }
     }
 
-    useEffect(()=>{
+    useEffect(()=> {
         if (user) {
             fetchUser();
         }
-    }),[user]
+    },[user]);
     const value = {
         currency, navigate, user, getToken, isOwner, setIsOwner, axios, showPlaceReg, setShowPlaceReg, searchedCities, setSearchedCities
     }

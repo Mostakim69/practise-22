@@ -12,7 +12,7 @@ import twitterIcon from './twitterIcon.svg'
 import linkendinIcon from './linkendinIcon.svg'
 import freeWifiIcon from './freeWifiIcon.svg'
 import freeBreakfastIcon from './freeBreakfastIcon.svg'
-import roomServiceIcon from './roomServiceIcon.svg'
+import tourServiceIcon from './roomServiceIcon.svg'
 import mountainIcon from './mountainIcon.svg'
 import poolIcon from './poolIcon.svg'
 import homeIcon from './homeIcon.svg'
@@ -23,10 +23,10 @@ import badgeIcon from './badgeIcon.svg'
 import menuIcon from './menuIcon.svg'
 import closeMenu from './closeMenu.svg'
 import guestsIcon from './guestsIcon.svg'
-import roomImg1 from './roomImg1.png'
-import roomImg2 from './roomImg2.png'
-import roomImg3 from './roomImg3.png'
-import roomImg4 from './roomImg4.png'
+import tourImg1 from './roomImg1.png'
+import tourImg2 from './roomImg2.png'
+import tourImg3 from './roomImg3.png'
+import tourImg4 from './roomImg4.png'
 import regImage from './regImage.png'
 import exclusiveOfferCardImg1 from "./exclusiveOfferCardImg1.png";
 import exclusiveOfferCardImg2 from "./exclusiveOfferCardImg2.png";
@@ -54,7 +54,7 @@ export const assets = {
     linkendinIcon,
     freeWifiIcon,
     freeBreakfastIcon,
-    roomServiceIcon,
+    tourServiceIcon,
     mountainIcon,
     poolIcon,
     closeIcon,
@@ -75,37 +75,37 @@ export const assets = {
 }
 
 export const cities = [
-    "Dubai",
-    "Singapore",
-    "New York",
-    "London",
+    "Dhaka",
+    "Rajshahi",
+    "Rangpur",
+    "Barishal",
 ];
 
 // Exclusive Offers Dummy Data
 export const exclusiveOffers = [
-    { _id: 1, title: "Summer Escape Package", description: "Enjoy a complimentary day and daily breakfast", priceOff: 25, expiryDate: "Aug 31", image: exclusiveOfferCardImg1 },
+    { _id: 1, title: "Summer Escape Package", description: "Enjoy a complimentary night and daily breakfast", priceOff: 25, expiryDate: "Aug 31", image: exclusiveOfferCardImg1 },
     { _id: 2, title: "Romantic Getaway", description: "Special couples package including spa treatment", priceOff: 20, expiryDate: "Sep 20", image: exclusiveOfferCardImg2 },
     { _id: 3, title: "Luxury Retreat", description: "Book 60 days in advance and save on your stay at any of our luxury properties worldwide.", priceOff: 30, expiryDate: "Sep 25", image: exclusiveOfferCardImg3 },
 ]
 
 // Testimonials Dummy Data
 export const testimonials = [
-    { id: 1, name: "Emma Rodriguez", address: "Barcelona, Spain", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", rating: 5, review: "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that QuickStay provides." },
-    { id: 2, name: "Liam Johnson", address: "New York, USA", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", rating: 4, review: "QuickStay exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!" },
-    { id: 3, name: "Sophia Lee", address: "Seoul, South Korea", image: "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200", rating: 5, review: "Amazing service! I always find the best luxury accommodations through QuickStay. Their recommendations never disappoint!" }
+    { id: 1, name: "Emma Rodriguez", address: "Rajshahi, Bangladesh", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", rating: 5, review: "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that QuickStay provides." },
+    { id: 2, name: "Liam Johnson", address: "Rangpur, Bangladesh", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", rating: 4, review: "QuickStay exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!" },
+    { id: 3, name: "Sophia Lee", address: "Dhaka, Bangladesh", image: "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200", rating: 5, review: "Amazing service! I always find the best luxury accommodations through QuickStay. Their recommendations never disappoint!" }
 ];
 
 // Facility Icon
 export const facilityIcons = {
     "Free WiFi": assets.freeWifiIcon,
     "Free Breakfast": assets.freeBreakfastIcon,
-    "Room Service": assets.roomServiceIcon,
+    "Tour Service": assets.tourServiceIcon,
     "Mountain View": assets.mountainIcon,
     "Pool Access": assets.poolIcon,
 };
 
-// For Room Details Page
-export const roomCommonData = [
+// For Tour Details Page
+export const tourCommonData = [
     { icon: assets.homeIcon, title: "Clean & Safe Stay", description: "A well-maintained and hygienic space just for you." },
     { icon: assets.badgeIcon, title: "Enhanced Cleaning", description: "This host follows Staybnb's strict cleaning standards." },
     { icon: assets.locationFilledIcon, title: "Excellent Location", description: "90% of guests rated the location 5 stars." },
@@ -115,40 +115,40 @@ export const roomCommonData = [
 // User Dummy Data
 export const userDummyData = {
     "_id": "user_2unqyL4diJFP1E3pIBnasc7w8hP",
-    "username": "Great Stack",
-    "email": "user.greatstack@gmail.com",
+    "username": "Poster Boy",
+    "email": "user.posterboy520807@gmail.com",
     "image": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzJ2N2c5YVpSSEFVYVUxbmVYZ2JkSVVuWnFzWSJ9",
-    "role": "hotelOwner",
+    "role": "placeOwner",
     "createdAt": "2025-03-25T09:29:16.367Z",
     "updatedAt": "2025-04-10T06:34:48.719Z",
     "__v": 1,
     "recentSearchedCities": [
-        "New York"
+        "Rangpur"
     ]
 }
 
 // Hotel Dummy Data
-export const hotelDummyData = {
+export const placeDummyData = {
     "_id": "67f76393197ac559e4089b72",
     "name": "Urbanza Suites",
     "address": "Main Road  123 Street , 23 Colony",
     "contact": "+0123456789",
     "owner": userDummyData,
-    "city": "New York",
+    "city": "Rangpur",
     "createdAt": "2025-04-10T06:22:11.663Z",
     "updatedAt": "2025-04-10T06:22:11.663Z",
     "__v": 0
 }
 
-// Rooms Dummy Data
-export const roomsDummyData = [
+// Tours Dummy Data
+export const toursDummyData = [
     {
         "_id": "67f7647c197ac559e4089b96",
-        "hotel": hotelDummyData,
-        "roomType": "Double Bed",
+        "place": placeDummyData,
+        "tourType": "Double Bed",
         "pricePerDay": 399,
-        "amenities": ["Room Service", "Mountain View", "Pool Access"],
-        "images": [roomImg1, roomImg2, roomImg3, roomImg4],
+        "amenities": ["Tour Service", "Mountain View", "Pool Access"],
+        "images": [tourImg1, tourImg2, tourImg3, tourImg4],
         "isAvailable": true,
         "createdAt": "2025-04-10T06:26:04.013Z",
         "updatedAt": "2025-04-10T06:26:04.013Z",
@@ -156,11 +156,11 @@ export const roomsDummyData = [
     },
     {
         "_id": "67f76452197ac559e4089b8e",
-        "hotel": hotelDummyData,
-        "roomType": "Double Bed",
+        "place": placeDummyData,
+        "tourType": "Double Bed",
         "pricePerDay": 299,
-        "amenities": ["Room Service", "Mountain View", "Pool Access"],
-        "images": [roomImg2, roomImg3, roomImg4, roomImg1],
+        "amenities": ["Tour Service", "Mountain View", "Pool Access"],
+        "images": [tourImg2, tourImg3, tourImg4, tourImg1],
         "isAvailable": true,
         "createdAt": "2025-04-10T06:25:22.593Z",
         "updatedAt": "2025-04-10T06:25:22.593Z",
@@ -168,11 +168,11 @@ export const roomsDummyData = [
     },
     {
         "_id": "67f76406197ac559e4089b82",
-        "hotel": hotelDummyData,
-        "roomType": "Double Bed",
+        "place": placeDummyData,
+        "tourType": "Double Bed",
         "pricePerDay": 249,
-        "amenities": ["Free WiFi", "Free Breakfast", "Room Service"],
-        "images": [roomImg3, roomImg4, roomImg1, roomImg2],
+        "amenities": ["Free WiFi", "Free Breakfast", "Tour Service"],
+        "images": [tourImg3, tourImg4, tourImg1, tourImg2],
         "isAvailable": true,
         "createdAt": "2025-04-10T06:24:06.285Z",
         "updatedAt": "2025-04-10T06:24:06.285Z",
@@ -180,11 +180,11 @@ export const roomsDummyData = [
     },
     {
         "_id": "67f763d8197ac559e4089b7a",
-        "hotel": hotelDummyData,
-        "roomType": "Single Bed",
+        "place": placeDummyData,
+        "tourType": "Single Bed",
         "pricePerDay": 199,
-        "amenities": ["Free WiFi", "Room Service", "Pool Access"],
-        "images": [roomImg4, roomImg1, roomImg2, roomImg3],
+        "amenities": ["Free WiFi", "Tour Service", "Pool Access"],
+        "images": [tourImg4, tourImg1, tourImg2, tourImg3],
         "isAvailable": true,
         "createdAt": "2025-04-10T06:23:20.252Z",
         "updatedAt": "2025-04-10T06:23:20.252Z",
@@ -199,8 +199,8 @@ export const userBookingsDummyData = [
     {
         "_id": "67f76839994a731e97d3b8ce",
         "user": userDummyData,
-        "room": roomsDummyData[1],
-        "hotel": hotelDummyData,
+        "tour": toursDummyData[1],
+        "place": placeDummyData,
         "checkInDate": "2025-04-30T00:00:00.000Z",
         "checkOutDate": "2025-05-01T00:00:00.000Z",
         "totalPrice": 299,
@@ -215,8 +215,8 @@ export const userBookingsDummyData = [
     {
         "_id": "67f76829994a731e97d3b8c3",
         "user": userDummyData,
-        "room": roomsDummyData[0],
-        "hotel": hotelDummyData,
+        "tour": toursDummyData[0],
+        "place": placeDummyData,
         "checkInDate": "2025-04-27T00:00:00.000Z",
         "checkOutDate": "2025-04-28T00:00:00.000Z",
         "totalPrice": 399,
@@ -231,8 +231,8 @@ export const userBookingsDummyData = [
     {
         "_id": "67f76810994a731e97d3b8b4",
         "user": userDummyData,
-        "room": roomsDummyData[3],
-        "hotel": hotelDummyData,
+        "tour": toursDummyData[3],
+        "place": placeDummyData,
         "checkInDate": "2025-04-11T00:00:00.000Z",
         "checkOutDate": "2025-04-12T00:00:00.000Z",
         "totalPrice": 199,

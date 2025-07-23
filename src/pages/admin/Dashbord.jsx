@@ -3,7 +3,7 @@ import Title from '../../components/Title';
 import { assets, dashboardDummyData } from '../../assets/assets';
 
 const Dashbord = () => {
-    const [dashboardData, setDashboardData] = useState(dashboardDummyData)
+    const [dashboardData, /*setDashboardData*/] = useState(dashboardDummyData)
     return (
         <div>
             <Title align='left' font='outfit' title='Dashboard' subTitle='Monitor your place listings, track booking and analyze revenue-all one place. Stay updated with real-time insights to ensure smooth operations.'></Title>
@@ -45,7 +45,7 @@ const Dashbord = () => {
                                 </td>
 
                                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 max-sm:hidden'>
-                                    {item.room.roomType}
+                                    {item.tour.tourType}
                                 </td>
 
                                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>

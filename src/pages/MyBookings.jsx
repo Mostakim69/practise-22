@@ -4,7 +4,7 @@ import { assets, userBookingsDummyData } from '../assets/assets'
 
 
 const MyBookings = () => {
-    const [bookings, setBookings] = useState(userBookingsDummyData)
+    const [bookings, /*setBookings*/] = useState(userBookingsDummyData)
     return (
         <div className='py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32'>
 
@@ -19,14 +19,14 @@ const MyBookings = () => {
                     <div key={booking._id} className='grid grid-cols-1 md:grid-cols-[3fr_2fr_1fr] w-full border-b border-gray-300 py-6 first:border-t'>
                         {/* place details */}
                         <div className='flex flex-col md:flex-row'>
-                            <img src={booking.room.images[0]} alt="place-img" className='min-md:w-44 rounded shadow object-cover' />
+                            <img src={booking.tour.images[0]} alt="place-img" className='min-md:w-44 rounded shadow object-cover' />
                             <div className='flex flex-col gap-1.5 max-md:mt-3 min-md:ml-4'>
-                                <p className='font-playfair text-2xl'>{booking.hotel.name}
-                                    <span className='font-inter text-sm'> ({booking.room.roomType})</span>
+                                <p className='font-playfair text-2xl'>{booking.place.name}
+                                    <span className='font-inter text-sm'> ({booking.tour.tourType})</span>
                                 </p>
                                 <div className='flex items-center gap-1 text-sm text-gray-500'>
                                     <img src={assets.locationIcon} alt="location-icon" />
-                                    <span>{booking.hotel.address}</span>
+                                    <span>{booking.place.address}</span>
                                 </div>
                                 <div className='flex items-center gap-1 text-sm text-gray-500'>
                                     <img src={assets.guestsIcon} alt="guests-icon" />

@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets';
 import { useAppContext } from '../../context/AppContext';
 import toast from 'react-hot-toast';
 
-const AddPlace = () => {
+const AddTour = () => {
 
     const { axios, getToken } = useAppContext()
     const [images, setImages] = useState({
@@ -20,7 +20,7 @@ const AddPlace = () => {
         amenities: {
             'Free WiFi': false,
             'Free Breakfast': false,
-            'Room Service': false,
+            'Tour Service': false,
             'Mountain View': false,
             'Pool Access': false
         }
@@ -59,7 +59,7 @@ const AddPlace = () => {
                     amenities: {
                         'Free WiFi': false,
                         'Free Breakfast': false,
-                        'Room Service': false,
+                        'Tour Service': false,
                         'Mountain View': false,
                         'Pool Access': false
                     }
@@ -77,14 +77,14 @@ const AddPlace = () => {
     }
     return (
         <form onSubmit={onSubmitHandler}>
-            <Title align='left' font='outfit' title='Add Room' subTitle='Fill in the details carefully and accurate place details, pricing, and amenities, to enhance the user booking experience.'></Title>
+            <Title align='left' font='outfit' title='Add Tour Place' subTitle='Fill in the details carefully and accurate place details, pricing, and amenities, to enhance the user booking experience.'></Title>
             {/* Upload area for images */}
             <p className='text-gray-800 mt-10'>Images</p>
             <div className='grid grid-cols-2 sm:flex gap-4 my-2 flex-wrap'>
                 {Object.keys(images).map((key) => (
-                    <label htmlFor={`roomImage${key}`} key={key}>
+                    <label htmlFor={`tourImage${key}`} key={key}>
                         <img className='max-h-13 cursor-pointer opacity-80' src={images[key] ? URL.createObjectURL(images[key]) : assets.uploadArea} alt="" />
-                        <input type="file" accept='image/*' id={`roomImage${key}`} hidden onChange={e => setImages({ ...images, [key]: e.target.files[0] })} />
+                        <input type="file" accept='image/*' id={`tourImage${key}`} hidden onChange={e => setImages({ ...images, [key]: e.target.files[0] })} />
                     </label>
                 ))}
             </div>
@@ -124,4 +124,4 @@ const AddPlace = () => {
     );
 };
 
-export default AddPlace;
+export default AddTour;

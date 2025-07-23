@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { assets } from "../assets/assets"
-import { useClerk, UserButton } from "@clerk/clerk-react";
+import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
 import { useAppContext } from "../context/AppContext";
 
 const BookIcon = () => (
@@ -12,19 +12,17 @@ const BookIcon = () => (
 const Navbar = () => {
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'Hotels', path: '/rooms' },
+        { name: 'Places', path: '/tours' },
         { name: 'Experience', path: '/' },
         { name: 'About', path: '/' },
     ];
 
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 
     const { openSignIn } = useClerk()
+    const { user } = useUser()
     const location = useLocation()
 
-    const { user, navigate, isOwner, setShowPlaceReg } = useAppContext()
+    const { navigate, isOwner, setShowPlaceReg } = useAppContext()
 
     useEffect(() => {
 
@@ -42,6 +40,10 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [location.pathname]);
 
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
     return (
         <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
             {/* Logo */}
@@ -57,12 +59,12 @@ const Navbar = () => {
                         <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
                     </a>
                 ))}
-                { user && (
+                {user && (
 
-                    <button className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? 'text-black' : 'text-white'} transition-all`} onClick={() => isOwner ?  navigate('/owner') : setShowPlaceReg(true)}>
-                       {isOwner ? 'Dashboard' : 'List Your Place' }
+                    <button className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? 'text-black' : 'text-white'} transition-all`} onClick={() => isOwner ? navigate('/owner') : setShowPlaceReg(true)}>
+                        {isOwner ? 'Dashboard' : 'List Your Place'}
                     </button>
-                    )
+                )
                 }
             </div>
 
@@ -105,8 +107,8 @@ const Navbar = () => {
                     </a>
                 ))}
 
-                {user && <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all" onClick={() => isOwner ?  navigate('/owner') : setShowPlaceReg(true)}>
-                    {isOwner ? 'Dashboard' : 'List Your Place' }
+                {user && <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all" onClick={() => isOwner ? navigate('/owner') : setShowPlaceReg(true)}>
+                    {isOwner ? 'Dashboard' : 'List Your Place'}
                 </button>}
 
                 {!user && <button onClick={openSignIn} className="bg-black text-white px-8 py-2.5 rounded-full transition-all duration-500">

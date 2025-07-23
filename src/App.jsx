@@ -9,10 +9,10 @@ import MyBookings from './pages/MyBookings';
 import PlaceReg from './components/PlaceReg';
 import Layout from './pages/admin/Layout';
 import Dashbord from './pages/admin/Dashbord';
-import AddPlace from './pages/admin/AddPlace';
-import ListPlace from './pages/admin/ListPlace';
 import { Toaster } from 'react-hot-toast';
 import { useAppContext } from './context/AppContext';
+import AddTour from './pages/admin/AddTour';
+import ListTour from './pages/admin/ListTour';
 
 const App = () => {
 
@@ -27,13 +27,13 @@ const App = () => {
       <div className='min-h-[70vh]'>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/rooms' element={<AllPlaces/>}/>
-          <Route path='/rooms/:id' element={<PlaceDetails/>}/>
+          <Route path='/tours' element={<AllPlaces/>}/>
+          <Route path='/tours/:id' element={<PlaceDetails/>}/>
           <Route path='/my-bookings' element={<MyBookings/>}/>
           <Route path='/owner' element={<Layout/>}>
                 <Route index element={<Dashbord></Dashbord>}/>
-                <Route path="add-room" element={<AddPlace/>}/>
-                <Route path="list-room" element={<ListPlace/>}/>
+                <Route path="add-tour" element={<AddTour/>}/>
+                <Route path="list-tour" element={<ListTour/>}/>
           </Route>
         </Routes>
       </div>
