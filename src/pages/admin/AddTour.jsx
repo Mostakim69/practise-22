@@ -26,7 +26,7 @@ const AddTour = () => {
         }
     })
 
-    const [loading, setLoading] = useState()
+    const [loading, setLoading] = useState(false)
 
     const onSubmitHandler = async (e) => {
         e.preventDefault()
@@ -49,7 +49,7 @@ const AddTour = () => {
                 images[key] && formData.append('images', images[key])
             })
 
-            const { data } = await axios.post('/api/tour/', formData, { headers: { Authorization: `Bearer ${await getToken()}` } })
+            const { data } = await axios.post('/api/tours/', formData, { headers: { Authorization: `Bearer ${await getToken()}` } })
 
             if (data.success) {
                 toast.success(data.message)

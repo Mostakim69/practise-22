@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { assets } from "../assets/assets"
+import { useClerk, UserButton } from "@clerk/clerk-react";
 import { useAppContext } from "../context/AppContext";
 
 const BookIcon = () => (
@@ -8,7 +9,7 @@ const BookIcon = () => (
         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 19V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v13H7a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12M9 3v14m7 0v4" />
     </svg>
 )
-const Navbar = ({setShowLogin}) => {
+const Navbar = () => {
     const navLinks = [
         { name: 'Home', path: '/' },
         { name: 'Places', path: '/tours' },
@@ -17,11 +18,10 @@ const Navbar = ({setShowLogin}) => {
     ];
 
 
-    // const { openSignIn } = useClerk()
-    // const { user } = useUser()
+    const { openSignIn } = useClerk()
     const location = useLocation()
 
-    const { navigate, isOwner, setShowPlaceReg } = useAppContext()
+    const { user, navigate, isOwner, setShowPlaceReg } = useAppContext()
 
     useEffect(() => {
 
@@ -78,7 +78,7 @@ const Navbar = ({setShowLogin}) => {
                         </UserButton.MenuItems>
                     </UserButton>)
                     :
-                    (<button onClick={(setShowLogin(true))} className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
+                    (<button onClick={openSignIn} className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
                         Login
                     </button>)
                 }
@@ -110,7 +110,7 @@ const Navbar = ({setShowLogin}) => {
                     {isOwner ? 'Dashboard' : 'List Your Place'}
                 </button>}
 
-                {!user && <button onClick={(setShowLogin(true))} className="bg-black text-white px-8 py-2.5 rounded-full transition-all duration-500">
+                {!user && <button onClick={openSignIn} className="bg-black text-white px-8 py-2.5 rounded-full transition-all duration-500">
                     Login
                 </button>}
             </div>
